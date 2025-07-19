@@ -2,11 +2,46 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import {BrowserRouter, Routes,Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import UploadPost from './pages/UploadPost';
+import Feed from './pages/Feed';
+import Chatbox from './pages/Chatbox';
+import FollowPage from './pages/Feed';
+
+
 
 function App() {
+  return(
+    <>
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+      {/*Your route definitions */}
+    </Routes>
+    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Login/>}/>
+      <Route path="/signup" element={<SignUp/>}/>
+      </Routes>
+      {/*Only show navbar after login*/}
+      {window.location.pathname !=='/' && 
+      window.location.pathname !== '/signup' && <Navbar/>}
+      <Route path="/feed" element={<Feed/>}/>
+      <Route path="/upload" element={<UploadPost/>}
+      />
+      <Route path="/chat" element={<Chatbox/>}/>
+      <Route path="followers" element={<FollowPage/>}/>
+      <Routes/>
+    </>
+
+  );
   const [count, setCount] = useState(0)
 
   return (
+
     <>
       <div>
         <a href="https://vite.dev" target="_blank">
