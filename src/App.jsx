@@ -10,7 +10,7 @@ import UploadPost from './pages/UploadPost';
 import Feed from './pages/Feed';
 import Chatbox from './pages/Chatbox';
 import FollowPage from './pages/Feed';
-
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -33,7 +33,8 @@ function App() {
       <Route path="/upload" element={<UploadPost/>}
       />
       <Route path="/chat" element={<Chatbox/>}/>
-      <Route path="followers" element={<FollowPage/>}/>
+      <Route path="/followers" element={<FollowPage/>}/>
+      <Route path="/profile" element={<Profile/>}/>
       <Routes/>
     </>
 

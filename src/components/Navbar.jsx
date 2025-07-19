@@ -11,6 +11,8 @@ function Navbar() {
         <li><Link to="/chat">Chat</Link></li>
         <li><Link to="/followers">Follows</Link></li>
         <li><Link to="/">Logout</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
+        
       </ul>
     </nav>
   );
